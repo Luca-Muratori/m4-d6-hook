@@ -16,8 +16,6 @@ const [isError,setIsError]=useState(false)
 // }
  
 useEffect(()=>{
-    getComment()
-}, [asin])
     const getComment = async () => {
             setIsLoading(true)
             try {
@@ -44,6 +42,9 @@ useEffect(()=>{
                 setIsError(true)
             }
         }
+    getComment()
+}, [asin])
+    
         return (
             <div>
                 {isLoading && <Loading />}
